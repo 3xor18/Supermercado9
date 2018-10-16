@@ -111,22 +111,31 @@ class empleadoController extends Controller
     {
         $rut=request()->input('rut');
         $empleado=empleado::where('rut',$rut)->first();
-        return view('admin.empleado.agregarArticulos')->with('empleado',$empleado);
+        return view('admin.empleado.agregarart')->with('empleado',$empleado);
+    }
+
+    public function asig()
+    {
+        $rut=request()->input('rut');
+        $empleado=empleado::where('rut',$rut)->first();
+        return view('admin.empleado.agregarart')->with('empleado',$empleado);
     }
 
     public function addart(Request $request)
     {
-
-        $e=request()->input('prov');
-        foreach ($e as $temp){
             $asignacion=new asignacion();
             $now = new \DateTime();
             $asignacion->fecha_asig=$now;
+        $asignacion->articulo='';
             $asignacion->empleado=request()->input('rut');
-
-            $asignacion->articulo=$temp;
+            $asignacion->casco=request()->input('casco');
+            $asignacion->zapatos=request()->input('zapatos');
+            $asignacion->pantalones=request()->input('pantalon');
+            $asignacion->camisa=request()->input('camisa');
+            $asignacion->bata=request()->input('bata');
+            $asignacion->guantesmetalicos=request()->input('guantemetalico');
             $asignacion->save();
-        }
+
     }
 
     /**

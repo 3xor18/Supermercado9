@@ -55,10 +55,12 @@ Route::get('/editSucursal/{sucursal}', 'sucursalController@edit')->name('editSuc
 Route::put('updateSucursal/{sucursal?}', 'sucursalController@update')->name('updateSucursal');
 /////////////CEmpleado
 Route::get('detalleEmpleado/{empleado?}', 'empleadoController@show')->name('detalleEmpleado');
-Route::get('editRazon', 'empleadoController@show2')->name('editRazon');
+Route::get('editRazon', 'asignacionController@create')->name('editRazon');
 Route::get('/mostrarEmpleado', 'empleadoController@index')->name('mostrarEmpleado');
 Route::get('/crearEmpleado', 'empleadoController@create')->name('crearEmpleado');
 Route::post('/almacenarEmpleado', 'empleadoController@store')->name('almacenarEmpleado');
 Route::get('/editEmpleado/{empleado}', 'empleadoController@edit')->name('editEmpleado');
 Route::put('updateEmpleado/{empleado?}', 'empleadoController@update')->name('updateEmpleado');
-Route::post('almacenarArticulosEmpleado', 'empleadoController@addart')->name('almacenarArticulosEmpleado');
+Route::post('almacenarArticulosEmpleado', 'asignacionController@store')->name('almacenarArticulosEmpleado');
+/////////////Cargo
+Route::get('/mostrarAsignaciones', 'asignacionController@index')->name('mostrarAsignaciones');
