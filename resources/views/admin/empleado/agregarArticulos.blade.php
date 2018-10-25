@@ -19,11 +19,17 @@
             {!! Form::open(['route'=>'almacenarArticulosEmpleado','method'=>'POST','files'=>true]) !!}
             @foreach ($proveedores=App\articulo::all() as $proveedor)
                 <label>{{ Form::checkbox('prov[]', $proveedor->id) }} {{ $proveedor->nombre }}</label>
+                {{$asignaciones=App\asignacion::where('empleado',$empleado->rut)->value('fecha_asig')}}
+                <label for="">hola</label>
             @endforeach <br>
-            <input type="hidden" value="{{$empleado->rut}}" name="rut">
+            <input type="hidden" value="{{$empleado->rut}}" name="rut" class="form-control">
+
             {!! Form::submit('Asignar',['class'=>'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
 
+
     </div>
+    <br>
+    <hr>
 @endsection

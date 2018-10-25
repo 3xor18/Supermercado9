@@ -63,9 +63,9 @@
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="{{route('crearEmpleado')}}">Agregar Empleado</a>
                                             <a class="dropdown-item" href="{{route('mostrarEmpleado')}}">Ver Empleados</a>
-                                            <hr>
-                                            <a class="dropdown-item" href="{{route('mostrarAsignaciones')}}">Reporte</a>
-
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Buscar por Rut</a>
+                                            <a class="dropdown-item" href="#">Buscar por Sucursal</a>
                                         </div>
                                     </li>
                                     <li class="nav-item dropdown">
